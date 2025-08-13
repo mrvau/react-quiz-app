@@ -3,7 +3,6 @@ import classes from "../styles/Answers.module.css";
 import { Fragment } from "react";
 
 const Answers = ({ options = [], handleChange, input }) => {
-	console.log(options);
 	return (
 		<div className={classes.answers}>
 			{options &&

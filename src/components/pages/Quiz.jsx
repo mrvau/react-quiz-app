@@ -1,7 +1,7 @@
 import Answers from "../Answers";
 import ProgressBar from "../ProgressBar";
 import MiniPlayer from "../MiniPlayer";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useQuestions from "../../hooks/useQuestions";
 import { useEffect, useReducer, useState } from "react";
 import _ from "lodash";
@@ -38,6 +38,9 @@ const Quiz = () => {
 	const { currentUser } = useAuth();
 
   const navigate = useNavigate();
+	const location = useLocation();
+
+	const {videoTitle} = location.state;
 
 	useEffect(() => {
 		dispatch({ type: "questions", value: questions });
@@ -75,7 +78,6 @@ const Quiz = () => {
 		});
 
 		navigate(`/result/${id}`, {state: {qna}});
-		console.log(qna);
     return;
 	};
 
@@ -105,7 +107,7 @@ const Quiz = () => {
             submit={handleSubmit}
 						progress={percentage}
 					/>
-					<MiniPlayer />
+					<MiniPlayer id={id} title={videoTitle} />
 				</>
 			) : (
 				<div>No questions to show.</div>

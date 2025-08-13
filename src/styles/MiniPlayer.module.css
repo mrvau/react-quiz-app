@@ -8,13 +8,21 @@
   box-sizing: border-box;
   border: 1px solid hsl(0, 0%, 86%);
   border-radius: 5px;
+  transition: right 0.4s ease;
 }
 
-.miniPlayer img {
-  width: 300px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+.playerContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 aspect ratio */
   animation: miniplayerAnim 0.3s ease forwards;
+}
+
+.player {
+  position: absolute !important;
+  top: 0;
+  left: 0;
 }
 
 .open {
@@ -78,6 +86,7 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
   user-select: none;
 }
 
@@ -93,7 +102,7 @@
   display: none;
 }
 
-.floatingBtn img {
+.floatingBtn .playerContainer {
   transform: scale(0);
   display: none;
 }

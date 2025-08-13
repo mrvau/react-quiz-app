@@ -11,7 +11,6 @@ const Result = () => {
 	const { qna } = state;
 	const { loading, error, answers } = useAnswers(id);
 
-  console.log(location)
 
   const calculateScore = () => {
     let score = 0;

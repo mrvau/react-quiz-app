@@ -21,10 +21,7 @@ export default function useQuestions(id) {
 					setQuestions((prev) => {
 						return [...prev, ...Object.values(snapshot.val())];
 					});
-          console.log(snapshot.val());
-				} else {
-          console.log(snapshot.exists())
-        }
+				}
 			} catch (error) {
 				console.error(error);
 				setError(true);
