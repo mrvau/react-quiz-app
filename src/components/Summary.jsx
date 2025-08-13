@@ -1,13 +1,13 @@
 import classes from "../styles/Summary.module.css"
 import image from "../assets//images/success.png"
 
-const Summary = () => {
+const Summary = ({score, totalScore}) => {
 	return (
 		<div className={classes.summary}>
 			<div className={classes.point}>
 				{/* progress bar will be placed here */}
 				<p className={classes.score}>
-					Your score is <br />5 out of 10
+					Your score is <br />{score} out of {totalScore}
 				</p>
 			</div>
 
